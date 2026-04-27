@@ -55,9 +55,11 @@ export function PricingSection() {
               <CheckoutButton
                 bundleId={bundle.id}
                 label="Shop CampRinse"
-                className={`mt-8 w-full ${
-                  bundle.badge && "bg-cream text-charcoal-green hover:bg-white"
-                }`}
+                className={
+                  bundle.badge
+                    ? "mt-8 w-full bg-cream text-charcoal-green hover:bg-white"
+                    : "mt-8 w-full"
+                }
               />
             </article>
           ))}

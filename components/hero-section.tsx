@@ -45,7 +45,7 @@ export function HeroSection() {
               <div className="relative z-10 flex h-full min-h-[308px] flex-col justify-between sm:min-h-[388px]">
                 <div className="flex justify-end">
                   <span className="rounded-full bg-charcoal-green px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cream">
-                    MVP launch
+                    Supplier checks
                   </span>
                 </div>
                 <div className="mx-auto w-full max-w-sm">
