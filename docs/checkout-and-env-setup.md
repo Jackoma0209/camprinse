@@ -249,6 +249,7 @@ Also confirm in Vercel **Domains**:
 
 ## Related docs
 
+- `docs/stripe-setup-status.md` — **live status of automated Stripe/Vercel wiring**  
 - `docs/launch-checklist.md` — master go-live list  
 - `docs/freelancer-photo-shoot-brief.md` — send to photographer  
 - `docs/dog-photography-brief.md` — filename map for engineers  
