@@ -7,6 +7,7 @@
 - [x] Pricing reframed as dog rinse kits
 - [x] Checkout paused until env URLs set
 - [ ] Real dog photography in `public/images/` (see `docs/dog-photography-brief.md`)
+- [ ] Freelancer brief sent / shoot booked (`docs/freelancer-photo-shoot-brief.md`)
 
 ## Product
 
@@ -21,10 +22,14 @@
 
 ## Checkout (do not run ads until done)
 
-- [ ] External checkout provider configured
+Full walkthrough: `docs/checkout-and-env-setup.md`
+
+- [ ] External checkout provider configured (Stripe Payment Links recommended)
+- [ ] Three GBP products/links created (Weekend Walk / Dog Rinse / Multi-Dog)
 - [ ] `NEXT_PUBLIC_CHECKOUT_URL_STARTER` set in Vercel
 - [ ] `NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE` set in Vercel (Dog Rinse Kit)
 - [ ] `NEXT_PUBLIC_CHECKOUT_URL_FAMILY` set in Vercel
+- [ ] Production redeployed after env change
 - [ ] Test purchase completed
 - [ ] Order confirmation email checked
 - [ ] Buttons show real checkout (not “Checkout opening soon”)

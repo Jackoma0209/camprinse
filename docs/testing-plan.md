@@ -14,19 +14,26 @@
 
 - With checkout URLs blank, buttons should show `Checkout opening soon`.
 - With checkout URLs configured, buttons should link to the external checkout provider.
+- Header / hero / final CTA use the Dog Rinse Kit (`adventure`) checkout URL.
+- Pricing cards map:
+  - Weekend Walk Kit → `NEXT_PUBLIC_CHECKOUT_URL_STARTER`
+  - Dog Rinse Kit → `NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE`
+  - Multi-Dog / Family Kit → `NEXT_PUBLIC_CHECKOUT_URL_FAMILY`
 - With analytics IDs blank, no analytics scripts should load.
 - With analytics IDs configured, scripts should load after interaction.
 
 ## Content Checks
 
-- Confirm hero headline and subheadline match the launch plan.
-- Confirm use-case cards are present.
-- Confirm pricing is correct:
-  - Starter Kit: £34.99
-  - Adventure Kit: £44.99
-  - Family / Van-Life Kit: £59.99
+- Confirm hero headline: **Mud Stays Outside**.
+- Confirm dog-first problem → solution flow.
+- Confirm pricing labels and amounts:
+  - Weekend Walk Kit: £34.99
+  - Dog Rinse Kit: £44.99 (Most Popular)
+  - Multi-Dog / Family Kit: £59.99
 - Confirm no fake reviews are shown.
+- Confirm supplier SKU / CJDropshipping is **not** on the sales page.
 - Confirm no unverified heating, waterproof, pressure, battery-life or certification claims are present.
+- If images exist under `public/images/`, hero / before-after / product show real photos.
 
 ## Deployment Checks
 
@@ -35,3 +42,8 @@
 - Canonical URL is `https://camprinse.com`.
 - `robots.txt` includes the sitemap.
 - `sitemap.xml` includes all public pages.
+
+## Full guide
+
+- Checkout & env: `docs/checkout-and-env-setup.md`
+- Photo shoot (freelancer): `docs/freelancer-photo-shoot-brief.md`

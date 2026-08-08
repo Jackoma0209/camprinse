@@ -1,6 +1,7 @@
-# CampRinse Dog Photography Brief
+# CampRinse Dog Photography Brief (Internal)
 
-Use this brief to commission or shoot conversion photos. Drop finished files into `public/images/` with the **exact filenames** below — the site will pick them up automatically on the next deploy.
+Internal filename map and drop-in instructions.  
+**For freelancers:** send `docs/freelancer-photo-shoot-brief.md` instead (full shoot brief).
 
 ## Required files (priority order)
 
@@ -39,3 +40,5 @@ Use this brief to commission or shoot conversion photos. Drop finished files int
 2. Copy into `public/images/`.
 3. Commit and push to `main` (or redeploy).
 4. Confirm hero / before-after / product show real photos on production.
+
+Code: `lib/assets.ts` (auto-detects files at build time).

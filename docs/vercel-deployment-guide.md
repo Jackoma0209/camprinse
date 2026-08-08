@@ -31,6 +31,9 @@ NEXT_PUBLIC_TIKTOK_PIXEL_ID=
 
 Only add checkout URLs once supplier, fulfilment, returns and safety checks are complete.
 
+Full checkout walkthrough (Stripe / Shopify / env mapping / test purchase):  
+`docs/checkout-and-env-setup.md`
+
 ## Deployment Checks
 
 - Confirm `npm run build` passes locally.
