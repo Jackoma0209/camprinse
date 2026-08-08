@@ -1,15 +1,22 @@
+const businessAddress = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS?.trim() || "";
+const legalName = process.env.NEXT_PUBLIC_BUSINESS_NAME?.trim() || "CampRinse";
+
 export const site = {
   name: "CampRinse",
+  legalName,
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://camprinse.com",
   ukUrl: "https://camprinse.co.uk",
   email: "hello@camprinse.com",
+  businessAddress,
   description:
-    "CampRinse is the portable dog rinse system that keeps mud outside — stop dirty paws wrecking your car, van and home. Also useful for boots, beach and outdoor gear.",
+    "CampRinse is the portable dog rinse system that keeps mud outside — rinse dirty paws at the car before they reach your seats, hallway or sofa.",
   organizationSchema: {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "CampRinse",
+    legalName,
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://camprinse.com",
+    ...(businessAddress ? { address: businessAddress } : {}),
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -30,7 +37,7 @@ export const site = {
 
 export const navItems = [
   { label: "How it works", href: "#how-it-works" },
-  { label: "Dog kits", href: "#pricing" },
+  { label: "The kit", href: "#pricing" },
   { label: "Use cases", href: "#use-cases" },
   { label: "FAQ", href: "#faq" },
   { label: "Safety", href: "#safety" },
