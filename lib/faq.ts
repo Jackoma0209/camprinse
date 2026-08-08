@@ -1,37 +1,38 @@
+import { commerce } from "@/lib/commerce";
+
 export const faqs = [
   {
-    question: "Is CampRinse mainly for dogs?",
+    question: "What comes with the CampRinse kit?",
     answer:
-      "Yes. CampRinse is positioned first for muddy dog walks — rinsing paws at the car so mud doesn’t destroy the boot, seats, hallway or sofa. It also works for boots, beach sand, bikes, camping and outdoor gear.",
-  },
-  {
-    question: "Does CampRinse heat the water?",
-    answer:
-      "No heating claim is made for this MVP. CampRinse is a portable rechargeable rinse kit, not a heated shower.",
+      "The CampRinse Dog Rinse Kit includes the rechargeable portable rinse pump, rinse hose and shower head. It is designed to work from a separate container of clean water, so you do not need an outdoor tap at the end of the walk.",
   },
   {
     question: "Do I need a tap?",
     answer:
-      "No. The kit is designed for tap-free rinsing using a separate clean water source, such as a bottle or container in the car boot.",
+      "No. CampRinse is designed for tap-free rinsing from a separate clean-water container, making it practical at a car park, trail head, campsite or beach.",
   },
   {
-    question: "Will it work for large dogs?",
+    question: "Does CampRinse heat the water?",
     answer:
-      "CampRinse is intended for everyday paw rinses after walks. Multi-dog and heavier use is better suited to the Multi-Dog / Family Kit positioning.",
+      "No. CampRinse is a portable rechargeable rinse system, not a heated shower. Use water at a safe, comfortable temperature for your dog.",
   },
   {
-    question: "Why are there no reviews yet?",
+    question: "Is it only for dogs?",
     answer:
-      "CampRinse will only show customer reviews after verified customers have submitted them. The launch page does not fake reviews or star ratings.",
+      "Dogs are the main use. It is also handy for muddy boots, beach sand, bikes and outdoor gear when you want to clean up before loading the car.",
   },
   {
-    question: "Where does checkout happen?",
-    answer:
-      "Checkout links are configured through public Vercel environment variables and can point to the selected external checkout provider.",
+    question: "How quickly will my order arrive?",
+    answer: `${commerce.deliveryPromise}. The current delivery estimate and any delivery charge are shown before you complete payment.`,
   },
   {
-    question: "What should be confirmed before launch?",
+    question: "Can I return it if I change my mind?",
     answer:
-      "Supplier manual, UK compliance checks, fulfilment timing, returns handling, real dog photography, checkout URLs and final safety wording should all be confirmed before accepting orders.",
+      "For most UK online purchases, you normally have 14 days after receiving the goods to tell us you want to cancel, then a further 14 days to send them back. Our Returns page explains the process. Your statutory rights for faulty or misdescribed goods are not affected.",
+  },
+  {
+    question: "Where can I get help with an order?",
+    answer:
+      "Email hello@camprinse.com with your order details and we will help with delivery, returns or product questions.",
   },
 ] as const;
