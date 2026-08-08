@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CheckoutButton } from "@/components/checkout-button";
 import { getSiteImage } from "@/lib/assets";
+import { commerce } from "@/lib/commerce";
 
 export function HeroSection() {
   const heroImage = getSiteImage("hero");
@@ -10,21 +11,21 @@ export function HeroSection() {
       <div className="section-shell grid min-w-0 items-center gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:gap-12">
         <div className="min-w-0">
           <p className="inline-flex rounded-full border border-green-950/10 bg-white/70 px-4 py-2 text-sm font-bold text-accent-green shadow-sm">
-            Made for muddy dog walks
+            The rinse kit made for muddy dog walks
           </p>
-          <h1 className="mt-5 max-w-full break-normal text-[clamp(2.45rem,10.5vw,3.25rem)] font-black leading-[0.96] tracking-normal text-charcoal-green [overflow-wrap:break-word] sm:mt-6 sm:max-w-3xl sm:text-5xl lg:text-7xl">
-            Mud Stays Outside
+          <h1 className="mt-5 max-w-full text-[clamp(2.45rem,10.5vw,3.25rem)] font-black leading-[0.96] tracking-normal text-charcoal-green sm:mt-6 sm:max-w-3xl sm:text-5xl lg:text-7xl">
+            Mud Stays Outside.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-green-950/72 sm:mt-6 sm:text-xl">
-            The portable rinse system that stops dirty dogs destroying your car,
-            van and home. Rinse paws at the boot — before mud hits the seats,
-            hallway and sofa.
+            Rinse muddy paws at the car before they reach the boot, seats,
+            hallway or sofa. CampRinse is rechargeable, portable and works from
+            a separate clean-water container — no outdoor tap needed.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CheckoutButton
               bundleId="adventure"
-              label="Shop the Dog Rinse Kit"
-              className="sm:min-w-44"
+              label="Get CampRinse — £44.99"
+              className="sm:min-w-52"
             />
             <a
               href="#how-it-works"
@@ -33,11 +34,16 @@ export function HeroSection() {
               See how it works
             </a>
           </div>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-green-950/65">
+            <span>{commerce.checkoutPromise}</span>
+            <span>{commerce.deliveryPromise}</span>
+            <span>{commerce.supportPromise}</span>
+          </div>
           <div className="mt-8 grid grid-cols-2 gap-3 text-sm font-semibold text-green-950/70 sm:grid-cols-4">
-            <span className="rounded-2xl bg-white/65 p-4">Paws rinsed at the car</span>
-            <span className="rounded-2xl bg-white/65 p-4">UK dog owners</span>
+            <span className="rounded-2xl bg-white/65 p-4">Rinse at the car</span>
+            <span className="rounded-2xl bg-white/65 p-4">Rechargeable pump</span>
             <span className="rounded-2xl bg-white/65 p-4">No tap needed</span>
-            <span className="rounded-2xl bg-white/65 p-4">Keeps the home clean</span>
+            <span className="rounded-2xl bg-white/65 p-4">Compact boot kit</span>
           </div>
         </div>
 
@@ -55,48 +61,32 @@ export function HeroSection() {
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal-green/80 to-transparent p-5">
                   <span className="rounded-full bg-cream px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-charcoal-green">
-                    Mud-free boots
+                    Rinse before the ride home
                   </span>
                   <p className="mt-3 text-sm font-semibold leading-6 text-cream">
-                    Rinse paws at the car. Keep mud outside the home.
+                    Clean paws at the boot. Mud left at the trail.
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="relative min-h-[340px] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-water-blue/20 via-cream to-sand/45 p-4 sm:min-h-[440px] sm:p-6">
-                <div className="absolute left-7 top-8 h-24 w-24 rounded-full border-[16px] border-water-blue/25 sm:h-28 sm:w-28 sm:border-[18px]" />
-                <div className="absolute bottom-0 right-0 h-44 w-44 rounded-tl-[4rem] bg-charcoal-green/10 sm:h-56 sm:w-56 sm:rounded-tl-[5rem]" />
-                <div className="relative z-10 flex h-full min-h-[308px] flex-col justify-between sm:min-h-[388px]">
-                  <div className="flex justify-end">
-                    <span className="rounded-full bg-charcoal-green px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cream">
-                      Mud-free boots
-                    </span>
-                  </div>
-                  <div className="mx-auto w-full max-w-sm">
-                    <div className="rounded-[1.5rem] border border-green-950/10 bg-cream p-4 shadow-xl shadow-green-950/10 sm:rounded-[2rem] sm:p-5">
-                      <div className="h-18 rounded-3xl bg-charcoal-green sm:h-24" />
-                      <div className="mt-4 grid grid-cols-[1fr_auto] gap-4">
-                        <div>
-                          <div className="h-3 w-28 rounded-full bg-accent-green/50" />
-                          <div className="mt-3 h-3 w-44 rounded-full bg-green-950/15" />
-                          <div className="mt-2 h-3 w-36 rounded-full bg-green-950/15" />
-                        </div>
-                        <div className="size-16 rounded-full border-[12px] border-water-blue/45" />
+              <div className="flex min-h-[340px] flex-col justify-between overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-water-blue/20 via-cream to-sand/45 p-6 sm:min-h-[440px] sm:p-8">
+                <div>
+                  <span className="rounded-full bg-charcoal-green px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cream">
+                    The boot-side routine
+                  </span>
+                  <h2 className="mt-6 max-w-sm text-3xl font-black tracking-tight text-charcoal-green sm:text-4xl">
+                    Walk. Rinse. Drive home clean.
+                  </h2>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {["Add clean water", "Drop in the pump", "Rinse muddy paws"].map(
+                    (step, index) => (
+                      <div key={step} className="rounded-2xl bg-white/80 p-4 shadow-sm">
+                        <span className="text-xs font-black text-accent-green">0{index + 1}</span>
+                        <p className="mt-2 text-sm font-bold leading-6 text-charcoal-green">{step}</p>
                       </div>
-                      <div className="mt-4 rounded-3xl bg-white p-4 sm:mt-5">
-                        <div className="flex items-center gap-3">
-                          <span className="size-9 rounded-full bg-water-blue/25" />
-                          <span className="h-2 flex-1 rounded-full bg-green-950/15" />
-                        </div>
-                        <div className="mt-4 h-14 rounded-2xl bg-sand/45 sm:h-20" />
-                      </div>
-                    </div>
-                  </div>
-                  <p className="rounded-3xl bg-white/75 p-4 text-sm font-semibold leading-6 text-green-950/75">
-                    Drop in <code className="font-mono text-xs">public/images/hero-dog-boot.jpg</code>{" "}
-                    — muddy paws at the car boot, rinse in progress, clean dog
-                    ready to jump back in.
-                  </p>
+                    ),
+                  )}
                 </div>
               </div>
             )}
