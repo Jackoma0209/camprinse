@@ -10,8 +10,9 @@ export function Footer() {
             {site.name}
           </Link>
           <p className="mt-4 max-w-md leading-7 text-cream/72">
-            Portable rechargeable rinse kits for camping, beaches, muddy boots,
-            pets and outdoor gear.
+            The portable dog rinse system that keeps mud outside — stop dirty
+            paws wrecking your car, van and home. Also useful for boots, beach
+            and outdoor gear.
           </p>
           <p className="mt-4 text-sm text-cream/60">
             Primary domain: {site.url.replace("https://", "")} | UK domain:{" "}

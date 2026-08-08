@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = buildMetadata({
-  title: "CampRinse Portable Shower Kit | Rinse Off Anywhere",
+  title: "CampRinse Dog Rinse Kit | Mud Stays Outside",
   description:
-    "CampRinse is a portable rechargeable rinse kit for camping, beaches, muddy boots, pets and outdoor gear. Rinse off anywhere — no tap needed.",
+    "Stop muddy dogs wrecking your car, van and home. CampRinse is the portable dog rinse kit for UK walks — rinse paws at the boot. Also great for boots, beach, bikes and camping.",
   path: "/",
 });
 

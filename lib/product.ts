@@ -1,12 +1,12 @@
 export const product = {
   brand: "CampRinse",
-  name: "CampRinse Portable Shower Kit",
+  name: "CampRinse Dog Rinse Kit",
   supplier: "CJDropshipping",
   supplierProduct:
     "CJDropshipping Portable Shower Camping Rechargeable Outdoor Shower",
   sku: "CJYD205389301AZ",
   shortDescription:
-    "A portable rechargeable rinse kit for camping showers, beach sand, muddy boots, pets and outdoor gear.",
+    "A portable rechargeable rinse system for muddy dogs — stop dirty paws wrecking your car, van and home. Also useful for boots, beach sand, bikes and camping.",
   included: [
     "Portable rechargeable rinse pump kit",
     "Rinse hose and shower head configuration",
@@ -14,9 +14,9 @@ export const product = {
     "Launch bundle packaging and guidance to be confirmed",
   ],
   safeClaims: [
-    "Rechargeable portable rinse kit",
-    "Useful for camping, beaches, boots, pets and outdoor gear",
-    "Designed for tap-free outdoor clean-up using a separate water source",
+    "Rechargeable portable rinse kit for dog walks",
+    "Useful for muddy paws, boots, beach sand, bikes and camping",
+    "Designed for tap-free clean-up using a separate water source",
   ],
   excludedClaims: [
     "No heating claim",
@@ -28,10 +28,10 @@ export const product = {
 } as const;
 
 export const useCases = [
-  "Camping showers",
-  "Beach sand rinse-offs",
+  "Muddy dog paws",
   "Muddy boots",
-  "Dog paws",
+  "Beach sand rinse-offs",
+  "Camping clean-ups",
   "Bike and outdoor gear",
   "Festivals and van-life",
 ] as const;

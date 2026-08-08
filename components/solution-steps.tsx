@@ -1,15 +1,15 @@
 const steps = [
   {
-    title: "Pack the kit",
-    text: "Keep CampRinse in the car, van or camping storage with your outdoor gear.",
+    title: "Keep it in the boot",
+    text: "Store CampRinse with your dog walking kit so it’s ready the moment the walk ends.",
   },
   {
-    title: "Add a water source",
-    text: "Use a suitable clean water container where a tap is not available.",
+    title: "Add clean water",
+    text: "Use a bottle or container — no outdoor tap needed at the car park or trail head.",
   },
   {
-    title: "Rinse before home",
-    text: "Clean sand, mud and everyday outdoor grime before it reaches the upholstery.",
+    title: "Rinse paws before they jump in",
+    text: "Wash mud off at the car. Dog goes home clean. Car, hallway and sofa stay clean.",
   },
 ];
 
@@ -23,8 +23,12 @@ export function SolutionSteps() {
               How it works
             </p>
             <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal-green">
-              A simple tap-free rinse routine.
+              Three steps. Mud stays outside.
             </h2>
+            <p className="mt-4 leading-7 text-green-950/70">
+              A simple tap-free rinse routine built around dog walks — not a
+              complicated camping setup.
+            </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {steps.map((step, index) => (

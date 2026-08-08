@@ -12,7 +12,7 @@ const baseClass =
 
 export function CheckoutButton({
   bundleId,
-  label = "Shop CampRinse",
+  label = "Shop the Dog Rinse Kit",
   className = "",
 }: CheckoutButtonProps) {
   const checkoutUrl = getCheckoutUrl(bundleId);

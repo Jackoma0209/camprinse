@@ -24,7 +24,7 @@ export function Header({ compact = false }: HeaderProps) {
               {site.name}
             </span>
             <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-accent-green">
-              Rinse kit
+              Mud stays outside
             </span>
           </span>
         </Link>
@@ -44,7 +44,7 @@ export function Header({ compact = false }: HeaderProps) {
         ) : null}
 
         <div className="hidden items-center gap-3 md:flex">
-          <CheckoutButton bundleId="adventure" label="Shop CampRinse" />
+          <CheckoutButton bundleId="adventure" label="Shop Dog Rinse Kit" />
         </div>
 
         {!compact ? <MobileMenu /> : null}

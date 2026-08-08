@@ -6,7 +6,7 @@ export function ProductDetail() {
       <div className="section-shell grid gap-8 lg:grid-cols-2">
         <div className="rounded-[2rem] border border-green-950/10 bg-white/78 p-6 shadow-sm sm:p-8">
           <p className="text-sm font-black uppercase tracking-[0.2em] text-accent-green">
-            Initial product
+            The Dog Rinse System
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal-green">
             {product.name}

@@ -16,27 +16,44 @@ export type PricingBundle = {
 export const pricingBundles: PricingBundle[] = [
   {
     id: "starter",
-    name: "Starter Kit",
+    name: "Weekend Walk Kit",
     price: "£34.99",
-    description: "Simple outdoor clean-up kit for weekend trips and beach days.",
+    description:
+      "The essentials for occasional muddy walks — rinse paws at the car before the mess comes home.",
     envKey: "NEXT_PUBLIC_CHECKOUT_URL_STARTER",
-    includes: ["CampRinse rinse kit", "Great for car boots", "Compact clean-up setup"],
+    includes: [
+      "CampRinse portable rinse kit",
+      "Ideal for 1 dog & weekend walks",
+      "Compact setup for the car boot",
+    ],
   },
   {
     id: "adventure",
-    name: "Adventure Kit",
+    name: "Dog Rinse Kit",
     price: "£44.99",
     badge: "Most Popular",
-    description: "The go-to kit for camping, dogs, bikes and muddy gear.",
+    description:
+      "The go-to kit for dog owners who walk daily. Stop muddy paws wrecking your car, hallway and sofa.",
     envKey: "NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE",
-    includes: ["CampRinse rinse kit", "Outdoor-ready bundle positioning", "Best fit for regular trips"],
+    includes: [
+      "CampRinse portable rinse kit",
+      "Built for regular muddy dog walks",
+      "Also great for boots, beach & bikes",
+      "Best value for active dog owners",
+    ],
   },
   {
     id: "family",
-    name: "Family / Van-Life Kit",
+    name: "Multi-Dog / Family Kit",
     price: "£59.99",
-    description: "A wider-use bundle for family trips, van-life and repeat clean-ups.",
+    description:
+      "For multi-dog homes, family walks and van life — more capacity when every walk ends muddy.",
     envKey: "NEXT_PUBLIC_CHECKOUT_URL_FAMILY",
-    includes: ["CampRinse rinse kit", "Family and van-life positioning", "Useful for shared outdoor kit"],
+    includes: [
+      "CampRinse portable rinse kit",
+      "Sized for multi-dog & family use",
+      "Perfect for van life & big clean-ups",
+      "Keeps cars, vans and homes cleaner",
+    ],
   },
 ];

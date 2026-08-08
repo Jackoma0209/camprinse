@@ -4,7 +4,7 @@ export const site = {
   ukUrl: "https://camprinse.co.uk",
   email: "hello@camprinse.com",
   description:
-    "CampRinse is a portable rechargeable rinse kit for camping, beaches, muddy boots, pets and outdoor gear.",
+    "CampRinse is the portable dog rinse system that keeps mud outside — stop dirty paws wrecking your car, van and home. Also useful for boots, beach and outdoor gear.",
   organizationSchema: {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -29,11 +29,11 @@ export const site = {
 } as const;
 
 export const navItems = [
-  { label: "Use cases", href: "#use-cases" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Bundles", href: "#pricing" },
-  { label: "Safety", href: "#safety" },
+  { label: "Dog kits", href: "#pricing" },
+  { label: "Use cases", href: "#use-cases" },
   { label: "FAQ", href: "#faq" },
+  { label: "Safety", href: "#safety" },
 ] as const;
 
 export const legalPages = [

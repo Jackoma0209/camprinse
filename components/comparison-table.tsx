@@ -1,8 +1,8 @@
 const rows = [
-  ["Tap-free outdoor clean-up", "Yes", "No", "Limited"],
-  ["Reusable rinse routine", "Yes", "No", "Sometimes"],
+  ["Rinse muddy dog paws at the car", "Yes", "No", "Limited"],
+  ["Reusable after every walk", "Yes", "No", "Sometimes"],
   ["Useful for boots, paws and gear", "Yes", "Limited", "Awkward"],
-  ["Fits camping and van-life storage", "Yes", "Yes", "Varies"],
+  ["Fits the car boot or van", "Yes", "Yes", "Varies"],
 ];
 
 export function ComparisonTable() {
@@ -11,10 +11,10 @@ export function ComparisonTable() {
       <div className="section-shell">
         <div className="max-w-2xl">
           <p className="text-sm font-black uppercase tracking-[0.2em] text-accent-green">
-            Practical comparison
+            Why dog owners switch
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal-green">
-            Built for real outdoor clean-up moments.
+            Built for the messy end of every walk.
           </h2>
         </div>
         <div className="mt-10 overflow-x-auto rounded-[2rem] border border-green-950/10 bg-white/82 shadow-sm">

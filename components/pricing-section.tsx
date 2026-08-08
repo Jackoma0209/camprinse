@@ -7,14 +7,15 @@ export function PricingSection() {
       <div className="section-shell">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.2em] text-accent-green">
-            Main offer
+            Dog Rinse Kits
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal-green sm:text-5xl">
-            Choose your CampRinse kit.
+            Pick the kit that matches your walks.
           </h2>
           <p className="mt-4 text-lg leading-8 text-green-950/70">
-            Bundle names and pricing are ready for launch. Checkout buttons
-            activate when Vercel environment URLs are configured.
+            Built for UK dog owners. One primary goal: muddy paws stay outside
+            the car, the van and the house. UK delivery · simple setup ·
+            checkout ready when configured.
           </p>
         </div>
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
@@ -54,7 +55,11 @@ export function PricingSection() {
               </ul>
               <CheckoutButton
                 bundleId={bundle.id}
-                label="Shop CampRinse"
+                label={
+                  bundle.id === "adventure"
+                    ? "Shop the Dog Rinse Kit"
+                    : "Shop this kit"
+                }
                 className={
                   bundle.badge
                     ? "mt-8 w-full bg-cream text-charcoal-green hover:bg-white"
@@ -64,6 +69,11 @@ export function PricingSection() {
             </article>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm font-semibold leading-6 text-green-950/60">
+          Shop with confidence — UK-focused support, clear returns process, and
+          no invented reviews. Real dog-owner feedback appears after verified
+          customers buy.
+        </p>
       </div>
     </section>
   );

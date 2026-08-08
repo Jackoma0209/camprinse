@@ -6,20 +6,20 @@ export function HeroSection() {
       <div className="section-shell grid min-w-0 items-center gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:gap-12">
         <div className="min-w-0">
           <p className="inline-flex rounded-full border border-green-950/10 bg-white/70 px-4 py-2 text-sm font-bold text-accent-green shadow-sm">
-            CampRinse Portable Shower Kit
+            Made for muddy dog walks
           </p>
           <h1 className="mt-5 max-w-full break-normal text-[clamp(2.45rem,10.5vw,3.25rem)] font-black leading-[0.96] tracking-normal text-charcoal-green [overflow-wrap:break-word] sm:mt-6 sm:max-w-3xl sm:text-5xl lg:text-7xl">
-            Rinse Off Anywhere — No Tap Needed
+            Mud Stays Outside
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-green-950/72 sm:mt-6 sm:text-xl">
-            A portable rechargeable rinse kit for camping showers, beach sand,
-            muddy boots, pets and outdoor gear. Keep it in the car, van or
-            camping kit and clean up before the mess comes home.
+            The portable rinse system that stops dirty dogs destroying your car,
+            van and home. Rinse paws at the boot — before mud hits the seats,
+            hallway and sofa.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CheckoutButton
               bundleId="adventure"
-              label="Shop CampRinse"
+              label="Shop the Dog Rinse Kit"
               className="sm:min-w-44"
             />
             <a
@@ -30,10 +30,10 @@ export function HeroSection() {
             </a>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-3 text-sm font-semibold text-green-950/70 sm:grid-cols-4">
-            <span className="rounded-2xl bg-white/65 p-4">Tap-free setup</span>
-            <span className="rounded-2xl bg-white/65 p-4">Rechargeable kit</span>
-            <span className="rounded-2xl bg-white/65 p-4">Portable rinse kit</span>
-            <span className="rounded-2xl bg-white/65 p-4">Outdoor clean-up</span>
+            <span className="rounded-2xl bg-white/65 p-4">Paws rinsed at the car</span>
+            <span className="rounded-2xl bg-white/65 p-4">UK dog owners</span>
+            <span className="rounded-2xl bg-white/65 p-4">No tap needed</span>
+            <span className="rounded-2xl bg-white/65 p-4">Keeps the home clean</span>
           </div>
         </div>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
               <div className="relative z-10 flex h-full min-h-[308px] flex-col justify-between sm:min-h-[388px]">
                 <div className="flex justify-end">
                   <span className="rounded-full bg-charcoal-green px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cream">
-                    Supplier checks
+                    Mud-free boots
                   </span>
                 </div>
                 <div className="mx-auto w-full max-w-sm">
@@ -69,8 +69,9 @@ export function HeroSection() {
                   </div>
                 </div>
                 <p className="rounded-3xl bg-white/75 p-4 text-sm font-semibold leading-6 text-green-950/75">
-                  Visual placeholder: replace with verified supplier product
-                  photography before paid traffic.
+                  Visual placeholder: replace with real dog photography —
+                  muddy paws at the car boot, rinse in progress, clean dog
+                  jumping back in.
                 </p>
               </div>
             </div>

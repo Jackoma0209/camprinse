@@ -1,5 +1,4 @@
 import { AnnouncementBar } from "@/components/announcement-bar";
-import { ComparisonTable } from "@/components/comparison-table";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { FinalCTA } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
@@ -24,12 +23,11 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <UseCasesSection />
         <ProblemSection />
         <SolutionSteps />
         <ProductDetail />
-        <ComparisonTable />
         <PricingSection />
+        <UseCasesSection />
         <SocialProofPlaceholder />
         <FAQAccordion />
         <SafetySection />
@@ -41,7 +39,7 @@ export default function Home() {
           href="#pricing"
           className="focus-ring flex h-12 items-center justify-center rounded-full bg-charcoal-green px-5 text-sm font-bold text-white shadow-lg shadow-green-950/20"
         >
-          Shop CampRinse
+          Shop Dog Rinse Kit
         </a>
       </div>
       <script

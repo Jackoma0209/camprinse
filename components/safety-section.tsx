@@ -8,8 +8,13 @@ export function SafetySection() {
               Product safety
             </p>
             <h2 className="mt-3 text-4xl font-black tracking-tight">
-              Supplier documentation first.
+              Safe for real walks — documented first.
             </h2>
+            <p className="mt-4 leading-7 text-cream/75">
+              Dog owners trust products that are careful with claims. We only
+              publish safety and performance wording once supplier evidence is
+              confirmed.
+            </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
