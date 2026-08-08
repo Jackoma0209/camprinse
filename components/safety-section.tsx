@@ -5,23 +5,23 @@ export function SafetySection() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-sand">
-              Product safety
+              Simple, sensible use
             </p>
             <h2 className="mt-3 text-4xl font-black tracking-tight">
-              Safe for real walks — documented first.
+              Rinse the dog — not the electrics.
             </h2>
             <p className="mt-4 leading-7 text-cream/75">
-              Dog owners trust products that are careful with claims. We only
-              publish safety and performance wording once supplier evidence is
-              confirmed.
+              CampRinse is a rechargeable outdoor rinse kit. Use clean water,
+              follow the instructions supplied with your product and keep
+              charging accessories dry and protected.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Confirm manual, labelling and safety wording before launch.",
-              "Do not claim heating, waterproof ratings, pressure ratings or certifications without supplier proof.",
-              "Use clean water and follow the final product manual.",
-              "Keep checkout paused until fulfilment and returns handling are documented.",
+              "Use clean water at a safe, comfortable temperature for your dog.",
+              "CampRinse does not heat water and is not sold as a pressure washer.",
+              "Keep chargers, plugs and charging connections away from water while charging.",
+              "Stop use if the product, cable or connector appears damaged and contact support.",
             ].map((item) => (
               <div key={item} className="rounded-3xl bg-white/10 p-5 leading-7">
                 {item}
