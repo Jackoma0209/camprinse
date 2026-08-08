@@ -1,106 +1,61 @@
 # Stripe + Vercel Checkout Setup Status
 
-Last automated run: 2026-08-08  
-Stripe account: **Relaunchkit** (`acct_1TPgKKPVvmLFhcXK`) · email: jackhadcroft@gmail.com · country: GB
+Last updated: 2026-08-08  
+Stripe account: **Relaunchkit** (`acct_1TPgKKPVvmLFhcXK`)
 
-## Done automatically
+## Status: Stripe ready — Vercel env vars need 2 minutes of your time
 
-### Stripe products + prices (live mode)
+### Account
+
+| Check | Status |
+|-------|--------|
+| `charges_enabled` | true |
+| `payouts_enabled` | true |
+| `details_submitted` | true |
+| `card_payments` | active |
+| Statement descriptor | `CAMPRINSE` |
+
+### Products + prices (live)
 
 | Kit | Price | Product ID | Price ID |
 |-----|-------|------------|----------|
 | Weekend Walk Kit | £34.99 | `prod_V2GDcTngzH1NK3` | `price_1U2BhWPVvmLFhcXKO2CbSlfg` |
-| Dog Rinse Kit (Most Popular) | £44.99 | `prod_V2GDUmHISqW7tv` | `price_1U2BhXPVvmLFhcXKaPRJl7PT` |
+| Dog Rinse Kit | £44.99 | `prod_V2GDUmHISqW7tv` | `price_1U2BhXPVvmLFhcXKaPRJl7PT` |
 | Multi-Dog / Family Kit | £59.99 | `prod_V2GDpnEDYC0mUz` | `price_1U2BhXPVvmLFhcXKj5i1mva4` |
 
-View: https://dashboard.stripe.com/acct_1TPgKKPVvmLFhcXK/products
+### Payment Links (live — use these)
 
-### Vercel project located
+| Kit | Env var | Payment Link |
+|-----|---------|--------------|
+| Weekend Walk Kit | `NEXT_PUBLIC_CHECKOUT_URL_STARTER` | https://buy.stripe.com/8x228t2yKckr3xkb18dQQ00 |
+| Dog Rinse Kit | `NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE` | https://buy.stripe.com/7sYbJ31uGfwD2tgc5cdQQ01 |
+| Multi-Dog / Family Kit | `NEXT_PUBLIC_CHECKOUT_URL_FAMILY` | https://buy.stripe.com/bJeaEZddobgn0l85GOdQQ02 |
 
-| Field | Value |
-|-------|--------|
-| Project | `camprinse` |
-| Project ID | `prj_5hifS8xbFE0dJJEfuKo0PdwRAIa2` |
-| Team | `jackhadcroft-5882s-projects` (`team_teHvFzGEQO4f9h5hNikAWTMg`) |
-| Domains | camprinse.com, www.camprinse.com, camprinse.vercel.app |
-| Latest production | READY |
-
-## Blocked (needs you)
-
-### 1. Stripe account not activated for charges
-
-API status:
-
-- `charges_enabled`: **false**
-- `payouts_enabled`: **false**
-- `details_submitted`: **false**
-
-Past-due requirements:
-
-- `business_profile.product_description`
-- `business_profile.support_phone`
-- `business_profile.url`
-- `tos_acceptance.date` / `tos_acceptance.ip` (must be accepted by you in Dashboard)
-
-Because of this, Payment Link creation fails with:
-
-> No valid payment method types for this payment link… activate payment methods… dashboard
-
-**You must complete Stripe activation in the browser (cannot be finished via API for TOS):**
-
-1. Open https://dashboard.stripe.com/acct_1TPgKKPVvmLFhcXK  
-2. Complete **Activate account / Get ready to process payments**  
-3. Set business details, e.g.:
-   - Product description: *Portable dog rinse kits for muddy UK walks*
-   - Support phone: your real support number  
-   - Website: `https://camprinse.com`  
-4. Accept Stripe Terms of Service  
-5. Open https://dashboard.stripe.com/settings/payment_methods and ensure **Cards** are enabled for GBP  
-6. Reply here: **“Stripe is activated”**
-
-Then I will:
-
-- Create 3 Payment Links (GB shipping address, phone collection)  
-- Map them to Vercel env vars  
-- Redeploy production  
-
-### 2. Vercel env vars — need one of these
-
-MCP can read projects/deployments but **cannot set environment variables**. CLI has no credentials in this environment (`vercel whoami` → no credentials).
-
-**Option A (fastest — you paste links after I create them):**  
-Vercel → Project `camprinse` → Settings → Environment Variables → add Production:
+Also set:
 
 ```txt
 NEXT_PUBLIC_SITE_URL=https://camprinse.com
-NEXT_PUBLIC_CHECKOUT_URL_STARTER=<payment link>
-NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE=<payment link>
-NEXT_PUBLIC_CHECKOUT_URL_FAMILY=<payment link>
 ```
 
-Then **Redeploy** Production.
+Payment links collect: billing address, UK shipping address, phone.
 
-**Option B (so I can set them next time):**  
-Create a Vercel token at https://vercel.com/account/tokens and either:
+### How to add on Vercel (required)
 
-- run `npx vercel login` in this machine, or  
-- set `VERCEL_TOKEN` in the shell and tell me to continue  
+1. Open: https://vercel.com/jackhadcroft-5882s-projects/camprinse/settings/environment-variables  
+2. For **each** variable below, add to **Production** (and Preview if you want):
+   - `NEXT_PUBLIC_SITE_URL` = `https://camprinse.com`
+   - `NEXT_PUBLIC_CHECKOUT_URL_STARTER` = `https://buy.stripe.com/8x228t2yKckr3xkb18dQQ00`
+   - `NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE` = `https://buy.stripe.com/7sYbJ31uGfwD2tgc5cdQQ01`
+   - `NEXT_PUBLIC_CHECKOUT_URL_FAMILY` = `https://buy.stripe.com/bJeaEZddobgn0l85GOdQQ02`
+3. **Deployments → ⋯ on latest Production → Redeploy** (env changes need a rebuild)
+4. Hard-refresh https://camprinse.com — buttons should say **Shop the Dog Rinse Kit** (not Checkout opening soon)
 
-## Env mapping (once Payment Links exist)
+### After env is set
 
-| Env var | Stripe kit | Price ID |
-|---------|------------|----------|
-| `NEXT_PUBLIC_CHECKOUT_URL_STARTER` | Weekend Walk Kit | `price_1U2BhWPVvmLFhcXKO2CbSlfg` |
-| `NEXT_PUBLIC_CHECKOUT_URL_ADVENTURE` | Dog Rinse Kit | `price_1U2BhXPVvmLFhcXKaPRJl7PT` |
-| `NEXT_PUBLIC_CHECKOUT_URL_FAMILY` | Multi-Dog / Family Kit | `price_1U2BhXPVvmLFhcXKj5i1mva4` |
+- Click each pricing CTA once and confirm the right Stripe checkout amount  
+- Place a **small test order to yourself** (or refund after)  
+- Confirm fulfilment path for CJDropshipping  
 
-## Do not do yet
+### Popup you saw: “copy from sandbox?”
 
-- Do not run paid ads until a real test order + fulfilment path works  
-- Checkout buttons will stay **“Checkout opening soon”** until env vars are set and redeployed  
-
-## Resume command for agent
-
-After Stripe activation, say:
-
-> Stripe is activated — create payment links and wire Vercel checkout env vars
+Choose **Don't copy anything** — live products/links already exist.
