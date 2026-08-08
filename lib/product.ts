@@ -9,9 +9,9 @@ export const product = {
     "A portable rechargeable rinse system for muddy dogs — stop dirty paws wrecking your car, van and home. Also useful for boots, beach sand, bikes and camping.",
   included: [
     "Portable rechargeable rinse pump kit",
-    "Rinse hose and shower head configuration",
-    "Outdoor clean-up setup for water containers",
-    "Launch bundle packaging and guidance to be confirmed",
+    "Rinse hose and shower head setup",
+    "Works with a bottle or water container — no tap needed",
+    "Designed to live in the car boot with your walk kit",
   ],
   safeClaims: [
     "Rechargeable portable rinse kit for dog walks",

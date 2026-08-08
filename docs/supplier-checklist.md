@@ -22,7 +22,9 @@ SKU: CJYD205389301AZ
 
 ## Page Copy Guardrails
 
-- Position CampRinse as a portable rechargeable rinse kit.
-- Use cases: camping, beach sand, muddy boots, pets, van-life and outdoor gear.
+- Position CampRinse first for muddy dog walks (“Mud Stays Outside”).
+- Secondary uses: camping, beach sand, muddy boots, bikes, van-life and outdoor gear.
+- Do not show supplier SKU / CJDropshipping branding on the customer-facing sales page.
 - Do not add reviews until verified customer reviews exist.
 - Do not claim certifications, waterproofing, battery life, pressure or heating without documents.
+- Photography: follow `docs/dog-photography-brief.md` and drop files into `public/images/`.

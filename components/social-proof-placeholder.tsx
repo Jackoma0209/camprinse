@@ -1,4 +1,11 @@
+import Image from "next/image";
+import { getSiteImage } from "@/lib/assets";
+
 export function SocialProofPlaceholder() {
+  const beforeImage = getSiteImage("before");
+  const afterImage = getSiteImage("after");
+  const hasPhotos = beforeImage.available || afterImage.available;
+
   return (
     <section className="py-16 sm:py-20">
       <div className="section-shell">
@@ -10,36 +17,66 @@ export function SocialProofPlaceholder() {
             Before & after the muddy walk.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-8 text-green-950/70">
-            Verified photos and reviews from UK dog owners will appear here
-            after launch. We never invent testimonials or star ratings.
+            {hasPhotos
+              ? "Real walk moments — mud at the car, then clean paws ready for the drive home."
+              : "Verified photos and reviews from UK dog owners will appear here after launch. We never invent testimonials or star ratings."}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
-          <div className="rounded-[2rem] border border-dashed border-green-950/20 bg-white/60 p-6 sm:p-8">
-            <span className="rounded-full bg-charcoal-green/10 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-charcoal-green">
-              Before
-            </span>
-            <h3 className="mt-4 text-xl font-black text-charcoal-green">
-              Muddy paws, filthy boot, wet dog on the seats
-            </h3>
-            <p className="mt-3 leading-7 text-green-950/70">
-              Placeholder for real “after the walk” photography — dirty paws
-              at the car door, mud on the liner, dog ready to jump in.
-            </p>
-          </div>
-          <div className="rounded-[2rem] border border-dashed border-accent-green/40 bg-white/60 p-6 sm:p-8">
-            <span className="rounded-full bg-accent-green/15 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-accent-green">
-              After
-            </span>
-            <h3 className="mt-4 text-xl font-black text-charcoal-green">
-              Rinsed paws, clean car, mud left outside
-            </h3>
-            <p className="mt-3 leading-7 text-green-950/70">
-              Placeholder for rinse-in-action and clean-dog photography —
-              CampRinse at the boot, clean paws, dog hopping into a clean car.
-            </p>
-          </div>
+          <article className="overflow-hidden rounded-[2rem] border border-dashed border-green-950/20 bg-white/60">
+            {beforeImage.available ? (
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={beforeImage.src}
+                  alt={beforeImage.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
+            <div className="p-6 sm:p-8">
+              <span className="rounded-full bg-charcoal-green/10 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-charcoal-green">
+                Before
+              </span>
+              <h3 className="mt-4 text-xl font-black text-charcoal-green">
+                Muddy paws, filthy boot, wet dog on the seats
+              </h3>
+              <p className="mt-3 leading-7 text-green-950/70">
+                {beforeImage.available
+                  ? "The messy moment every UK dog owner knows too well."
+                  : "Add public/images/before-muddy-paws.jpg — dirty paws at the car door, mud on the liner, dog ready to jump in."}
+              </p>
+            </div>
+          </article>
+
+          <article className="overflow-hidden rounded-[2rem] border border-dashed border-accent-green/40 bg-white/60">
+            {afterImage.available ? (
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={afterImage.src}
+                  alt={afterImage.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
+            <div className="p-6 sm:p-8">
+              <span className="rounded-full bg-accent-green/15 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-accent-green">
+                After
+              </span>
+              <h3 className="mt-4 text-xl font-black text-charcoal-green">
+                Rinsed paws, clean car, mud left outside
+              </h3>
+              <p className="mt-3 leading-7 text-green-950/70">
+                {afterImage.available
+                  ? "CampRinse at the boot — clean paws, clean car, mud stays outside."
+                  : "Add public/images/after-clean-paws.jpg — CampRinse at the boot, clean paws, dog hopping into a clean car."}
+              </p>
+            </div>
+          </article>
         </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
