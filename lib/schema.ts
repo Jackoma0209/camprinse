@@ -3,6 +3,9 @@ import { pricingBundles } from "@/lib/pricing";
 import { product } from "@/lib/product";
 import { site } from "@/lib/site";
 
+const isConfirmedInStock =
+  process.env.NEXT_PUBLIC_PRODUCT_AVAILABILITY?.trim().toLowerCase() === "in_stock";
+
 export function buildProductSchema() {
   return {
     "@context": "https://schema.org",
@@ -19,7 +22,9 @@ export function buildProductSchema() {
       name: bundle.name,
       price: bundle.price.replace("£", ""),
       priceCurrency: "GBP",
-      availability: "https://schema.org/PreOrder",
+      availability: isConfirmedInStock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/PreOrder",
       url: `${site.url}/#pricing`,
     })),
   };
