@@ -1,8 +1,18 @@
 import Script from "next/script";
 
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
-const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
-const tiktokPixelId = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID;
+const configuredGaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+const configuredMetaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
+const configuredTiktokPixelId = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID?.trim();
+
+const gaId = configuredGaId && /^G-[A-Z0-9]+$/i.test(configuredGaId) ? configuredGaId : undefined;
+const metaPixelId =
+  configuredMetaPixelId && /^\d{5,30}$/.test(configuredMetaPixelId)
+    ? configuredMetaPixelId
+    : undefined;
+const tiktokPixelId =
+  configuredTiktokPixelId && /^[A-Z0-9]{8,32}$/i.test(configuredTiktokPixelId)
+    ? configuredTiktokPixelId
+    : undefined;
 
 export function Analytics() {
   return (
@@ -49,7 +59,7 @@ export function Analytics() {
               ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
               ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
               for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-              ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+              ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,n||{});return e};
               ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
               ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
               var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;
