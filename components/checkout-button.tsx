@@ -1,6 +1,8 @@
 import { TrackedCheckoutLink } from "@/components/tracked-checkout-link";
 import { getCheckoutUrl } from "@/lib/checkout";
+import { commerce } from "@/lib/commerce";
 import { pricingBundles, type BundleId } from "@/lib/pricing";
+import { product } from "@/lib/product";
 
 type CheckoutButtonProps = {
   bundleId: BundleId;
@@ -13,12 +15,12 @@ const baseClass =
 
 export function CheckoutButton({
   bundleId,
-  label = "Get CampRinse",
+  label = commerce.primaryCtaLabel,
   className = "",
 }: CheckoutButtonProps) {
   const checkoutUrl = getCheckoutUrl(bundleId);
   const bundle = pricingBundles.find((item) => item.id === bundleId);
-  const value = bundle ? Number(bundle.price.replace("£", "")) : 44.99;
+  const value = bundle ? Number(bundle.price.replace("£", "")) : product.priceValue;
 
   if (!checkoutUrl) {
     return (

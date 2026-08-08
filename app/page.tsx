@@ -4,6 +4,8 @@ import { FinalCTA } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
+import { LifestyleBenefits } from "@/components/lifestyle-benefits";
+import { MobileStickyCta } from "@/components/mobile-sticky-cta";
 import { PricingSection } from "@/components/pricing-section";
 import { ProblemSection } from "@/components/problem-section";
 import { ProductDetail } from "@/components/product-detail";
@@ -27,6 +29,7 @@ export default function Home() {
         <SolutionSteps />
         <ProductDetail />
         <PricingSection />
+        <LifestyleBenefits />
         <UseCasesSection />
         <SocialProofPlaceholder />
         <FAQAccordion />
@@ -34,14 +37,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/40 bg-cream/95 px-4 py-3 shadow-2xl backdrop-blur md:hidden">
-        <a
-          href="#pricing"
-          className="focus-ring flex h-12 items-center justify-center rounded-full bg-charcoal-green px-5 text-sm font-bold text-white shadow-lg shadow-green-950/20"
-        >
-          Shop Dog Rinse Kit
-        </a>
-      </div>
+      <MobileStickyCta />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}

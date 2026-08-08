@@ -1,5 +1,7 @@
 "use client";
 
+import { product } from "@/lib/product";
+
 type TrackedCheckoutLinkProps = {
   href: string;
   label: string;
@@ -20,28 +22,36 @@ export function TrackedCheckoutLink({
   value,
 }: TrackedCheckoutLinkProps) {
   function trackCheckout() {
-    const trackingWindow = window as TrackingWindow;
-    const payload = {
-      currency: "GBP",
-      value,
-      items: [
-        {
-          item_name: "CampRinse Dog Rinse Kit",
-          quantity: 1,
-          price: value,
-        },
-      ],
-    };
+    try {
+      const trackingWindow = window as TrackingWindow;
+      const payload = {
+        currency: "GBP",
+        value,
+        items: [
+          {
+            item_id: product.sku,
+            item_name: product.name,
+            quantity: 1,
+            price: value,
+          },
+        ],
+      };
 
-    trackingWindow.gtag?.("event", "begin_checkout", payload);
-    trackingWindow.fbq?.("track", "InitiateCheckout", {
-      currency: "GBP",
-      value,
-    });
-    trackingWindow.ttq?.track?.("InitiateCheckout", {
-      currency: "GBP",
-      value,
-    });
+      trackingWindow.gtag?.("event", "begin_checkout", payload);
+      trackingWindow.fbq?.("track", "InitiateCheckout", {
+        currency: "GBP",
+        value,
+        content_ids: [product.sku],
+        content_name: product.name,
+      });
+      trackingWindow.ttq?.track?.("InitiateCheckout", {
+        currency: "GBP",
+        value,
+        content_id: product.sku,
+      });
+    } catch {
+      // Analytics must never break checkout.
+    }
   }
 
   return (

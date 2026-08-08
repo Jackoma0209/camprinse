@@ -36,6 +36,9 @@ export default function ReturnsPolicyPage() {
               with your order number and the email address used at checkout. We
               will send the return instructions and return address that apply to
               your order.
+              {site.returnsAddress
+                ? ` Returns for your order are directed to: ${site.returnsAddress}.`
+                : " The return address may be a fulfilment warehouse rather than the business correspondence address."}
             </p>
             <p>
               For a change-of-mind return, you are responsible for the cost of

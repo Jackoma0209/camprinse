@@ -1,10 +1,8 @@
+import { schemaAvailabilityUrl } from "@/lib/commerce";
 import { faqs } from "@/lib/faq";
 import { pricingBundles } from "@/lib/pricing";
 import { product } from "@/lib/product";
 import { site } from "@/lib/site";
-
-const isConfirmedInStock =
-  process.env.NEXT_PUBLIC_PRODUCT_AVAILABILITY?.trim().toLowerCase() === "in_stock";
 
 export function buildProductSchema() {
   return {
@@ -21,10 +19,8 @@ export function buildProductSchema() {
       "@type": "Offer",
       name: bundle.name,
       price: bundle.price.replace("£", ""),
-      priceCurrency: "GBP",
-      availability: isConfirmedInStock
-        ? "https://schema.org/InStock"
-        : "https://schema.org/PreOrder",
+      priceCurrency: product.currency,
+      availability: schemaAvailabilityUrl(),
       url: `${site.url}/#pricing`,
     })),
   };

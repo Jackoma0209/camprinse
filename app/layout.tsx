@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = buildMetadata({
-  title: "CampRinse Dog Rinse Kit | Mud Stays Outside",
+  title: "CampRinse Dog Rinse Kit | Mud Stays Outside | Portable Dog Paw Rinse",
   description:
-    "Stop muddy dogs wrecking your car, van and home. CampRinse is the portable dog rinse kit for UK walks — rinse paws at the boot. Also great for boots, beach, bikes and camping.",
+    "CampRinse is the portable dog rinse kit for muddy UK walks. Rinse paws at the car boot before they reach seats, hallway or sofa. Dog paw washer · muddy paws cleaner · secure Stripe checkout.",
   path: "/",
 });
 
