@@ -1,5 +1,8 @@
+import { TrackedCheckoutLink } from "@/components/tracked-checkout-link";
 import { getCheckoutUrl } from "@/lib/checkout";
-import type { BundleId } from "@/lib/pricing";
+import { commerce } from "@/lib/commerce";
+import { pricingBundles, type BundleId } from "@/lib/pricing";
+import { product } from "@/lib/product";
 
 type CheckoutButtonProps = {
   bundleId: BundleId;
@@ -12,30 +15,31 @@ const baseClass =
 
 export function CheckoutButton({
   bundleId,
-  label = "Shop the Dog Rinse Kit",
+  label = commerce.primaryCtaLabel,
   className = "",
 }: CheckoutButtonProps) {
   const checkoutUrl = getCheckoutUrl(bundleId);
+  const bundle = pricingBundles.find((item) => item.id === bundleId);
+  const value = bundle ? Number(bundle.price.replace("£", "")) : product.priceValue;
 
   if (!checkoutUrl) {
     return (
       <span
         className={`${baseClass} cursor-not-allowed bg-green-950/15 text-green-950/55 ${className}`}
         aria-disabled="true"
-        title="Add the checkout URL in Vercel environment variables to enable this bundle."
+        title="Checkout is temporarily unavailable."
       >
-        Checkout opening soon
+        Checkout temporarily unavailable
       </span>
     );
   }
 
   return (
-    <a
+    <TrackedCheckoutLink
       className={`${baseClass} bg-charcoal-green text-white shadow-lg shadow-green-950/20 hover:-translate-y-0.5 hover:bg-deep-green ${className}`}
       href={checkoutUrl}
-      rel="noopener noreferrer"
-    >
-      {label}
-    </a>
+      label={label}
+      value={value}
+    />
   );
 }

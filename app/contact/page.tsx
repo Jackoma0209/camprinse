@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact | CampRinse",
-  description: "Contact CampRinse about orders, fulfilment and product questions.",
+  description: "Contact CampRinse customer support about orders, delivery, returns or the product.",
   path: "/contact",
 });
 
@@ -20,21 +20,28 @@ export default function ContactPage() {
             CampRinse support
           </p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-charcoal-green">
-            Contact
+            How can we help?
           </h1>
           <div className="mt-8 space-y-5 text-base leading-8 text-green-950/75">
             <p>
-              For launch enquiries, order support or supplier documentation,
-              contact{" "}
+              For order questions, delivery help, returns or product support,
+              email{" "}
               <a className="font-bold text-charcoal-green" href={`mailto:${site.email}`}>
                 {site.email}
               </a>
               .
             </p>
             <p>
-              Before the checkout links go live, confirm supplier fulfilment,
-              delivery estimates, returns handling and safety documentation.
+              If your message is about an existing order, include your order
+              number and the email address used at checkout so we can help more
+              quickly.
             </p>
+            {site.businessAddress ? (
+              <p>
+                <strong className="text-charcoal-green">Business address:</strong>{" "}
+                {site.businessAddress}
+              </p>
+            ) : null}
           </div>
         </article>
       </main>

@@ -1,3 +1,4 @@
+import { schemaAvailabilityUrl } from "@/lib/commerce";
 import { faqs } from "@/lib/faq";
 import { pricingBundles } from "@/lib/pricing";
 import { product } from "@/lib/product";
@@ -18,8 +19,8 @@ export function buildProductSchema() {
       "@type": "Offer",
       name: bundle.name,
       price: bundle.price.replace("£", ""),
-      priceCurrency: "GBP",
-      availability: "https://schema.org/PreOrder",
+      priceCurrency: product.currency,
+      availability: schemaAvailabilityUrl(),
       url: `${site.url}/#pricing`,
     })),
   };

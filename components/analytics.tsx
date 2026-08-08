@@ -1,8 +1,18 @@
 import Script from "next/script";
 
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
-const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
-const tiktokPixelId = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID;
+const configuredGaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+const configuredMetaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
+const configuredTiktokPixelId = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID?.trim();
+
+const gaId = configuredGaId && /^G-[A-Z0-9]+$/i.test(configuredGaId) ? configuredGaId : undefined;
+const metaPixelId =
+  configuredMetaPixelId && /^\d{5,30}$/.test(configuredMetaPixelId)
+    ? configuredMetaPixelId
+    : undefined;
+const tiktokPixelId =
+  configuredTiktokPixelId && /^[A-Z0-9]{8,32}$/i.test(configuredTiktokPixelId)
+    ? configuredTiktokPixelId
+    : undefined;
 
 export function Analytics() {
   return (

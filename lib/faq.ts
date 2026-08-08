@@ -1,37 +1,42 @@
+import { commerce } from "@/lib/commerce";
+import { product } from "@/lib/product";
+
 export const faqs = [
   {
-    question: "Is CampRinse mainly for dogs?",
-    answer:
-      "Yes. CampRinse is positioned first for muddy dog walks — rinsing paws at the car so mud doesn’t destroy the boot, seats, hallway or sofa. It also works for boots, beach sand, bikes, camping and outdoor gear.",
-  },
-  {
-    question: "Does CampRinse heat the water?",
-    answer:
-      "No heating claim is made for this MVP. CampRinse is a portable rechargeable rinse kit, not a heated shower.",
+    question: "What comes with CampRinse?",
+    answer: `The ${product.name} includes a rechargeable portable rinse pump, rinse hose, shower/rinse head and the standard accessories supplied with the unit. You supply a separate container of clean water.`,
   },
   {
     question: "Do I need a tap?",
     answer:
-      "No. The kit is designed for tap-free rinsing using a separate clean water source, such as a bottle or container in the car boot.",
+      "No. CampRinse is designed for tap-free rinsing from a separate clean-water container — practical at a car park, trail head, campsite or beach.",
   },
   {
-    question: "Will it work for large dogs?",
+    question: "Does it heat the water?",
     answer:
-      "CampRinse is intended for everyday paw rinses after walks. Multi-dog and heavier use is better suited to the Multi-Dog / Family Kit positioning.",
+      "No. CampRinse is a portable rechargeable rinse system, not a heated shower. Use water at a safe, comfortable temperature for your dog.",
   },
   {
-    question: "Why are there no reviews yet?",
+    question: "How much water do I need?",
     answer:
-      "CampRinse will only show customer reviews after verified customers have submitted them. The launch page does not fake reviews or star ratings.",
+      "A modest container of clean water is enough for a typical paw rinse after a walk. Exact water use varies with dog size and how muddy they are.",
   },
   {
-    question: "Where does checkout happen?",
+    question: "Can I use it for a large dog?",
     answer:
-      "Checkout links are configured through public Vercel environment variables and can point to the selected external checkout provider.",
+      "Yes for everyday paw rinses after walks. CampRinse is positioned for cleaning paws and lower legs at the car — not full body bathing of large dogs.",
   },
   {
-    question: "What should be confirmed before launch?",
+    question: "How long does delivery take?",
+    answer: `${commerce.deliveryPromise}. The delivery service, estimate and any charge are confirmed before you complete payment.`,
+  },
+  {
+    question: "Can I return it?",
     answer:
-      "Supplier manual, UK compliance checks, fulfilment timing, returns handling, real dog photography, checkout URLs and final safety wording should all be confirmed before accepting orders.",
+      "For most UK online purchases, you normally have 14 days after receiving the goods to tell us you want to cancel, then a further 14 days to send them back. See our Returns page. Statutory rights for faulty or misdescribed goods are not affected.",
+  },
+  {
+    question: "What if there is a problem with my order?",
+    answer: `Email ${commerce.supportEmail} with your order details. We will help with delivery, returns or product issues.`,
   },
 ] as const;

@@ -1,31 +1,43 @@
 export const product = {
   brand: "CampRinse",
   name: "CampRinse Dog Rinse Kit",
-  supplier: "CJDropshipping",
-  supplierProduct:
-    "CJDropshipping Portable Shower Camping Rechargeable Outdoor Shower",
-  sku: "CJYD205389301AZ",
+  sku: "CR-DOG-01",
+  price: "£44.99",
+  priceValue: 44.99,
+  currency: "GBP",
   shortDescription:
-    "A portable rechargeable rinse system for muddy dogs — stop dirty paws wrecking your car, van and home. Also useful for boots, beach sand, bikes and camping.",
+    "The portable rinse kit that lives in your car boot. Rinse muddy paws after the walk before they reach the boot, seats, hallway or sofa.",
+  tagline: "Walk → Rinse → Drive home clean.",
   included: [
-    "Portable rechargeable rinse pump kit",
-    "Rinse hose and shower head setup",
-    "Works with a bottle or water container — no tap needed",
-    "Designed to live in the car boot with your walk kit",
+    "Rechargeable portable rinse pump",
+    "Rinse hose",
+    "Shower / rinse head",
+    "Standard accessories supplied with the unit",
   ],
+  // Only populate when confirmed by supplier documentation.
+  verifiedSpecs: [] as readonly { label: string; value: string }[],
   safeClaims: [
     "Rechargeable portable rinse kit for dog walks",
-    "Useful for muddy paws, boots, beach sand, bikes and camping",
-    "Designed for tap-free clean-up using a separate water source",
-  ],
-  excludedClaims: [
-    "No heating claim",
-    "No verified battery-life claim yet",
-    "No waterproof rating claim yet",
-    "No pressure rating claim yet",
-    "No certification claim yet",
+    "Designed for muddy paws and outdoor clean-up",
+    "Works from a separate clean-water source — no outdoor tap required",
+    "Also useful for muddy boots, beach sand, bikes and camping gear",
   ],
 } as const;
+
+export const lifestyleBenefits = [
+  {
+    title: "At the trail",
+    text: "Mud gets rinsed away before your dog jumps back into the car.",
+  },
+  {
+    title: "In the car",
+    text: "Less mess on seats, mats, door sills and boot liners.",
+  },
+  {
+    title: "At home",
+    text: "Less towelling at the door and fewer muddy paw prints indoors.",
+  },
+] as const;
 
 export const useCases = [
   "Muddy dog paws",

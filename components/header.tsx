@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CheckoutButton } from "@/components/checkout-button";
 import { MobileMenu } from "@/components/mobile-menu";
+import { commerce } from "@/lib/commerce";
 import { navItems, site } from "@/lib/site";
 
 type HeaderProps = {
@@ -44,7 +45,10 @@ export function Header({ compact = false }: HeaderProps) {
         ) : null}
 
         <div className="hidden items-center gap-3 md:flex">
-          <CheckoutButton bundleId="adventure" label="Shop Dog Rinse Kit" />
+          <CheckoutButton
+            bundleId="adventure"
+            label={commerce.primaryCtaLabel}
+          />
         </div>
 
         {!compact ? <MobileMenu /> : null}
